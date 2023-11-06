@@ -104,13 +104,31 @@ window.addEventListener("keydown", (e) => {
     e.key === "."
   ) {
     clickButtonElement(e.key);
+  } else if (e.key === "/" || e.key === "+" || e.key === "-" || e.key === "%") {
+    clickOperationElement(e.key);
+  } else if (e.key === "*") {
+    clickOperationElement("X");
+  } else if (e.key == "Enter" || "=") {
+    clickEqualElement();
   }
 });
 
-function clickButtonElement(key){
-    numbersElement.forEach(button => {
-        if(button.innerText === key) {
-            button.click();
-        }
-    })
+function clickButtonElement(key) {
+  numbersElement.forEach((button) => {
+    if (button.innerText === key) {
+      button.click();
+    }
+  });
+}
+
+function clickOperationElement(key) {
+  operationElement.forEach((button) => {
+    if (button.innerText === key) {
+      button.click();
+    }
+  });
+}
+
+function clickEqualElement() {
+  equalElement.click();
 }
