@@ -25,3 +25,26 @@ numbersElement.forEach((number) => {
     display2El.innerText = dis2Num;
   });
 });
+
+operationElement.forEach((operation) => {
+  operation.addEventListener("click", (e) => {
+    if (!dis2Num) return;
+    haveDot = false;
+    const operationName = e.target.innerText;
+    if (dis1Num && dis2Num && lastOperation) {
+      mathOperation();
+    } else {
+      result = parseFloat(dis2Num);
+    }
+    clearVar(operationName);
+    console.log(result);
+  });
+});
+
+function clearVar(name = "") {
+    dis1Num += dis2Num + " " + name + " ";
+    display1El.innerText = dis1Num;
+    display2El.innerText = "";
+    dis2Num = "";
+    displayTemp.innerText = result;
+}
