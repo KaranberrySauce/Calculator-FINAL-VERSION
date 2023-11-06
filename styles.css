@@ -34,14 +34,14 @@ section{
     position: relative;
 }
 
-.history-display{
+.display-1{
     opacity: 0.4;
     font-size: 20px;
     height: 25px;
     overflow: hidden;
 }
 
-.temp-display{
+.temp-result{
     position: absolute;
     bottom: 0;
     left: 10;
